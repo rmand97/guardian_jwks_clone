@@ -12,12 +12,9 @@ defmodule GuardianJwks.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       consolidate_protocols: Mix.env() != :test,
-      description: description(),
-      package: package(),
       deps: deps(),
       source_ref: "v#{@version}",
       source_url: "https://github.com/rmand97/guardian_jwks_clone",
-      docs: docs_config(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -53,32 +50,6 @@ defmodule GuardianJwks.MixProject do
 
       # tests
       {:mox, "~> 1.0", only: :test}
-    ]
-  end
-
-  defp description do
-    """
-    JWKS (JSON Web Keys Set) support for Guardian 1.0
-    """
-  end
-
-  defp package do
-    [
-      files: ["lib", "mix.exs", "README.md", "LICENSE", "CHANGELOG.md"],
-      licenses: ["Apache 2.0"],
-      links: %{
-        "GitHub" => "https://github.com/ReelCoaches/guardian_jwks",
-        "Docs" => "http://hexdocs.pm/guardian_jwks"
-      }
-    ]
-  end
-
-  defp docs_config do
-    [
-      extras: [
-        {"CHANGELOG.md", [title: "Changelog"]}
-      ],
-      main: "GuardianJwks"
     ]
   end
 end
