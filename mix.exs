@@ -16,7 +16,7 @@ defmodule GuardianJwks.MixProject do
       package: package(),
       deps: deps(),
       source_ref: "v#{@version}",
-      source_url: "https://github.com/ReelCoaches/guardian_jwks",
+      source_url: "https://github.com/rmand97/guardian_jwks_clone",
       docs: docs_config(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
