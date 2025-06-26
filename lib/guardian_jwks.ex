@@ -25,15 +25,15 @@ defmodule GuardianJwks do
   def log(_, :none, _), do: :ok
 
   def log(level, min_level, msg) when level == :debug do
-    unless Logger.compare_levels(:debug, min_level) == :lt, do: Logger.debug(fn -> msg end)
+    if Logger.compare_levels(:debug, min_level) != :lt, do: Logger.debug(fn -> msg end)
   end
 
   def log(:info, min_level, msg) do
-    unless Logger.compare_levels(:info, min_level) == :lt, do: Logger.info(fn -> msg end)
+    if Logger.compare_levels(:info, min_level) != :lt, do: Logger.info(fn -> msg end)
   end
 
   def log(:warn, min_level, msg) do
-    unless Logger.compare_levels(:warn, min_level) == :lt, do: Logger.warn(fn -> msg end)
+    if Logger.compare_levels(:warn, min_level) != :lt, do: Logger.warning(fn -> msg end)
   end
 
   def log(:error, _, msg), do: Logger.error(msg)

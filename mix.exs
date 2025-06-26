@@ -8,7 +8,7 @@ defmodule GuardianJwks.MixProject do
       app: :guardian_jwks,
       version: @version,
       name: "Guardian JWKS",
-      elixir: "~> 1.5",
+      elixir: "~> 1.8",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       consolidate_protocols: Mix.env() != :test,
